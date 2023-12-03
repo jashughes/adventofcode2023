@@ -13,10 +13,11 @@ get_positions <- function(v, syms) {
 }
 check_pos <- function(start, end, y) (start - 1 <= y) & (end + 1 >= y) 
 
-
+# Part 1
+cd <- get_positions(instrl, setdiff(unique(instrl), c(".", as.character(0:9))))
 
 check_row <- function(sts, eds, y, s) {
-  tot = 0
+  tot <- 0
   for (j in 1:length(sts)) {
     if (check_pos(sts[j], eds[j], y)) {
       tot = tot + as.numeric(substr(s, sts[j], eds[j]))
@@ -25,10 +26,7 @@ check_row <- function(sts, eds, y, s) {
   tot
 }
 
-
-# Part 1
-cd <- get_positions(instrl, setdiff(unique(instrl), c(".", as.character(0:9))))
-alltot = 0
+alltot <- 0
 for (i in 1:nrow(cd)) {
   for (x in setdiff(c(cd[i,1] - 1, cd[i,1], cd[i,1] + 1), c(0, length(instr) + 1))) {
     alltot = alltot + check_row(starts[[x]], ends[[x]], cd[i,2], instr[[x]])
@@ -37,11 +35,7 @@ for (i in 1:nrow(cd)) {
 alltot
 
 # Part 2
-sym <- matrix(
-  instrl == "*", 
-  nrow = length(instr), byrow = TRUE
-)
-cd <- which(sym, arr.ind = T)
+cd <- get_positions(instrl, "*")
 
 find_adj <- function(sts, eds, y, s) {
   adj <- c()
