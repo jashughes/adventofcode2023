@@ -12,7 +12,7 @@ find_and_sum <- function(instr, part) {
       convert_number(first_and_last[1]) * 10 + convert_number(first_and_last[2])
     },
     numeric(1)
-  ) |> unlist() |> sum()
+  ) |> sum()
 }
 
 find_matches <- function(s, part) {
