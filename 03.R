@@ -31,7 +31,6 @@ for (i in 1:nrow(cd)) {
     tot1 <- tot1 + check_row(starts[[x]], ends[[x]], cd[i,2], instr[[x]])
   }
 }
-tot1
 
 # Part 2
 cd <- get_positions(instrl, "*")
