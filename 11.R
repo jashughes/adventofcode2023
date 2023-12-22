@@ -25,5 +25,5 @@ galaxy_deltas <- function(instr, expand) {
 }
 
 message("Part 1:", galaxy_deltas(instr, 2))
-message("Part 1:", galaxy_deltas(instr, 1000000))
+message("Part 2:", galaxy_deltas(instr, 1000000))
 
